@@ -15,16 +15,11 @@ limitations under the License.
 -->
 
 
-<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../bower_components/ft-labeled-icon-button/ft-labeled-icon-button.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
 
-<!--
-`<ft-accordion-item>`
 
-An element that is a segment of an accordion element.
-
-@demo
--->
 <dom-module id="ft-accordion-item">
 
     <template>
@@ -35,13 +30,100 @@ An element that is a segment of an accordion element.
             :host {
                 display:block;
                 overflow:hidden;
-                @apply --ft-accordion-item;
+                @apply --layout-vertical;
             }
         </style>
 
-        <div>
-            ft-accordion-item
-        </div>
+        <style>
+            .verticalText
+            {
+                display:block;
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                -o-transform: rotate(-90deg);
+            }
+        </style>
+
+        <iron-pages
+                id="openOrClosed"
+                class="flex layout vertical"
+                attr-for-selected="name"
+                selected="[[_pageName]]">
+
+            <!-- Open -->
+            <div
+                    class="flex layout vertical"
+                    name="open">
+
+                <!-- Header-->
+                <div
+                        class="layout horizontal center"
+                        style="height:60px; border-bottom:1px solid #DDD; padding-left:20px; padding-right:10px; ">
+
+                    <!-- Title -->
+                    <div
+                            style="font-family:Arial; font-size:16pt; ">
+                        [[title]]
+                    </div>
+
+                    <!-- Spacer -->
+                    <div class="flex"></div>
+
+                    <!-- Spacer -->
+                    <div style="width:15px;"></div>
+
+                    <!-- Hide button -->
+                    <ft-labeled-icon-button
+                            id="hideButton"
+                            icon="arrow-back"
+                            label="Hide"
+                            on-tap="_onShowOrHideButtonClicked">
+                    </ft-labeled-icon-button>
+
+                </div>
+
+                <!-- Content -->
+                <div
+                        class="flex scroll">
+                    <slot
+                            name="content">
+                    </slot>
+                </div>
+
+            </div>
+
+            <!-- Closed -->
+            <div
+                    class="flex layout vertical center"
+                    name="closed">
+
+                <div
+                        class="layout horizontal center"
+                        style="height:55px; padding-left:5px; padding-right:5px; ">
+
+                    <!-- Show button -->
+                    <ft-labeled-icon-button
+                            id="showButton"
+                            icon="arrow-forward"
+                            label="Show"
+                            on-tap="_onShowOrHideButtonClicked">
+                    </ft-labeled-icon-button>
+
+                </div>
+
+                <!-- Title -->
+                <div
+                        class="flex"
+                        style="width:20px; padding-top:58px; ">
+                    <span
+                            class="verticalText"
+                            style="font-family:Arial; font-size:16pt; ">
+                        [[title]]
+                    </span>
+                </div>
+            </div>
+        </iron-pages>
 
     </template>
 
@@ -50,9 +132,45 @@ An element that is a segment of an accordion element.
 
             is: 'ft-accordion-item',
 
-            properties: {
+            properties:
+            {
+                title:
+                {
+                    type: String,
+                    notify: true,
+                    value: "Untitled"
+                },
+
+                isOpen:
+                {
+                    type: Object,
+                    notify: true,
+                    value: true,
+                    observer: "_isOpenChanged"
+                },
+
+                _pageName:
+                {
+                    type: String,
+                    notify: true,
+                    value: "open"
+                }
+            },
+
+            _isOpenChanged: function()
+            {
+                if (this.isOpen)
+                    this._pageName = "open";
+                else
+                    this._pageName = "closed";
+            },
+            
+            _onShowOrHideButtonClicked: function()
+            {
+                this.isOpen = !this.isOpen;
             }
 
-        });
+        })
+
     </script>
 </dom-module>
