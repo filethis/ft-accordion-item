@@ -61,10 +61,10 @@ limitations under the License.
                         class="layout horizontal center"
                         style="height:60px; border-bottom:1px solid #DDD; padding-left:20px; padding-right:10px; ">
 
-                    <!-- Title -->
+                    <!-- Heading -->
                     <div
                             style="font-family:Arial; font-size:16pt; ">
-                        [[title]]
+                        [[heading]]
                     </div>
 
                     <!-- Spacer -->
@@ -84,12 +84,8 @@ limitations under the License.
                 </div>
 
                 <!-- Content -->
-                <div
-                        class="flex scroll">
-                    <slot
-                            name="content">
-                    </slot>
-                </div>
+                <slot name="content">
+                </slot>
 
             </div>
 
@@ -112,14 +108,14 @@ limitations under the License.
 
                 </div>
 
-                <!-- Title -->
+                <!-- Heading -->
                 <div
                         class="flex"
                         style="width:20px; padding-top:58px; ">
                     <span
                             class="verticalText"
                             style="font-family:Arial; font-size:16pt; ">
-                        [[title]]
+                        [[heading]]
                     </span>
                 </div>
             </div>
@@ -134,7 +130,7 @@ limitations under the License.
 
             properties:
             {
-                title:
+                heading:
                 {
                     type: String,
                     notify: true,
