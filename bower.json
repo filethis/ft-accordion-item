@@ -3,7 +3,7 @@
     "description": "An element that is a segment of an accordion element.",
     "main": "ft-accordion-item.html",
     "dependencies": {
-        "ft-element-demo": "filethis/ft-element-demo#^1.0.13",
+        "ft-element-demo": "filethis/ft-element-demo#^1.0.14",
         "polymer": "Polymer/polymer#1.9 - 2"
     },
     "devDependencies": {
