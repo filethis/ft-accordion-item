@@ -1,7 +1,7 @@
 # Project configuration
 NAME=ft-accordion-item
 SRC_DIR=
-VERSION=1.0.11
+VERSION=1.0.12
 LOCAL_PORT=3516
 GITHUB_USER=filethis
 GITHUB_USER_ABBREV=ft
