@@ -1,7 +1,7 @@
 {
   "description": "An element that is a segment of an accordion element.",
-  "name": "filethis/ft-accordion-item",
-  "version": "filethis/1.0.12",
+  "name": "ft-accordion-item",
+  "version": "1.0.12",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",
