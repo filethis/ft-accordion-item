@@ -1,6 +1,6 @@
 {
   "description": "An element that is a segment of an accordion element.",
-  "name": "ft-accordion-item",
+  "name": "@filethis/ft-accordion-item",
   "version": "1.0.12",
   "resolutions": {
     "inherits": "2.0.3",
@@ -30,7 +30,7 @@
   "dependencies": {
     "@polymer/polymer": "^3.0.0",
     "@polymer/paper-button": "^3.0.0",
-    "ft-labeled-icon-button": "file:.yalc/ft-labeled-icon-button"
+    "@filethis/ft-labeled-icon-button": "^1.0.21"
   },
   "devDependencies": {
     "@polymer/iron-component-page": "^4.0.0",
@@ -38,5 +38,21 @@
     "@polymer/iron-test-helpers": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "wct-browser-legacy": "^1.0.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filethis/ft-accordion-item.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/filethis/ft-accordion-item/issues"
+  },
+  "homepage": "https://github.com/filethis/ft-accordion-item#readme"
 }
