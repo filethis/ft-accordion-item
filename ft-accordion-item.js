@@ -18,7 +18,7 @@ limitations under the License.
   from HTML and may be out of place here. Review them and
   then delete this comment!
 */
-import 'ft-labeled-icon-button/ft-labeled-icon-button.js';
+import '@filethis/ft-labeled-icon-button/ft-labeled-icon-button.js';
 
 import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
 import '@polymer/polymer/polymer-legacy.js';

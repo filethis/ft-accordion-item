@@ -15,7 +15,6 @@
     "*.make",
     "*.png",
     "*.svg",
-    ".yalc/",
     "data/",
     "demo/",
     "test/",
