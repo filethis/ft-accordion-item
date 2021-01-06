@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "ft-labeled-icon-button": {
-      "signature": "40102ff35b04fbf34029982d02053327",
-      "file": true
-    }
-  }
-}
